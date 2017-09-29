@@ -10,7 +10,6 @@ Meteor.startup(() => {
   });
 });
 
-// Executed whenever a user visits with a route like 'localhost:3000/abcd'
 // req = request, res = response, next = reference to the next middleware we want to run
 function onRoute(req, res, next) {
   // Take the token out of the url and try to find a
@@ -20,8 +19,6 @@ function onRoute(req, res, next) {
   // If we find a link object, redirect the user to the long URL
   if(link){
 
-    // to update a collection, we use mongo modifiers - see https://docs.meteor.com/api/collections.html#modifiers
-    // $inc = increment
     // no need to add a meteor method since this is already on the server
     Links.update(link, { $inc: { clicks: 1 }});
 
@@ -36,10 +33,6 @@ function onRoute(req, res, next) {
     next();
   }
 }
-
-// localhost:3000/   NO Match
-// localhost:3000/books/harry_potter   NO Match
-// localhost:3000/abcd   will match!!
 
 //  '/:token' will look for one '/' and any single string of characters, no other '/'
 const middleware = ConnectRoute(function(router) {

@@ -15,7 +15,7 @@ Meteor.methods({
     const token = Math.random().toString(36).slice(-5); // nifty random 5 string  generator
 
     //Links.insert({ url: url, token: token, clicks: 0});
-    Links.insert({ url, token, clicks: 0}); // <- es6 destructured
+    Links.insert({ url, token, clicks: 0}); 
   }
 });
 

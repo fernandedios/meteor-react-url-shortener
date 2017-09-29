@@ -12,10 +12,6 @@ class LinkCreate extends Component {
   handleSubmit(event) {
     event.preventDefault(); // prevent browser refresh when submitting form
 
-    // refs = references
-    // refers to a specific dom element that is being produced by our component
-    // console.log(this.refs.link.value);
-
     // meteor method is a safe and protected way when working with data
     // call meteor method inside links.js
     Meteor.call('links.insert', this.refs.link.value, (error) => {

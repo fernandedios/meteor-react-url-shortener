@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Links } from '../../imports/collections/links';
+import config from './config/config.js';
 
 class LinkList extends Component {
   renderRows() {
     return this.props.links.map(link => {
-      const { url, clicks, token } = link; //es6 destructuring
+
+      const { url, clicks, token } = link; 
 
       // using es6 template string
-      const shortLink = `http://localhost:3000/${token}`;
-      //const shortLink = 'http://localhost:3000/' + token;
+      const shortLink = `${config.domain}/${token}`;
 
       return(
         <tr key={token}>
