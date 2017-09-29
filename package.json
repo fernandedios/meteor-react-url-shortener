@@ -1,0 +1,20 @@
+{
+  "name": "meteor-react-url-shortener",
+  "version": "1.0.0",
+	"description": "MeteorJs ReactJs URL Shortener App",
+  "scripts": {
+    "start": "meteor run",
+		"test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fernan de Dios",
+	"license": "MIT",
+  "dependencies": {
+    "babel-runtime": "^6.18.0",
+    "connect-route": "^0.1.5",
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.4.2",
+    "react-addons-pure-render-mixin": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "valid-url": "^1.0.9"
+  }
+}
